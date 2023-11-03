@@ -11,6 +11,7 @@ class CreateProjectForm(FlaskForm):
     start_date = DateField('StartDate', validators=[DataRequired()])
     end_date = DateField('EndDate', validators=[DataRequired()])
     description = StringField('Description', validators=[DataRequired()])
+    firm_name = StringField('Firm Name')  # New field for Firm Name
     submit = SubmitField('Create')
 
 
@@ -34,4 +35,13 @@ class CreateTransactionForm(FlaskForm):
     paymentDate = DateField('PaymentDate', validators=[DataRequired()])
     vendor = SelectField('Vendor', coerce=int, validators=[DataRequired()])
     project_id = IntegerField('ProjectID', validators=[DataRequired()])
+
+    submit = SubmitField('Create')
+
+
+class CreateFirmForm(FlaskForm):
+    name = StringField('Name', validators=[DataRequired()])
+    address = StringField('Address', validators=[DataRequired()])
+    description = StringField('Description', validators=[DataRequired()])
+    gst_no = StringField('GST Number', validators=[DataRequired()])
     submit = SubmitField('Create')

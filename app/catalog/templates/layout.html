@@ -9,17 +9,16 @@
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
             <link href="https://fonts.googleapis.com/css?family=Sansita" rel="stylesheet">
             <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-            <style>
-                /* CSS for the fixed footer */
-                .footer {
-                    position: fixed;
-                    bottom: 0;
-                    width: 100%;
-                    background-color: #f5f5f5; /* Set your preferred background color */
-                    text-align: center;
-                    padding: 10px 0; /* Adjust the padding as needed */
-                }
-        </style>
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+            <!-- Add the DataTables CSS link -->
+            <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+
+            <!-- Add the jQuery library link (required for DataTables) -->
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+            <!-- Add the DataTables JavaScript library link -->
+            <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+
         </head>
     {% endblock head %}
 
@@ -36,6 +35,8 @@
                 <ul class="nav navbar-nav pull-right nav-list">
                     <li><a href="{{ url_for('main.display_projects') }}"> Home </a></li>
                     <li><a href="{{ url_for('main.display_vendors') }}"> Vendors </a></li>
+                    <li><a href="{{ url_for('main.display_transactions') }}"> Transactions </a></li>
+                    <li><a href="{{ url_for('main.display_firms') }}"> Firms </a></li>
                 </ul>
             </div>
         </nav>
@@ -43,15 +44,6 @@
 
         {# empty block for custom content #}
         {% block content %} {% endblock content %}
-
-        {# footer #}
-        {% block footer %}
-        <footer class="footer">
-            <div class="container ftr">
-                <p class="text-center small"> Projects Around The Corner &copy; | 2023 </p>
-            </div>
-        </footer>
-        {% endblock footer %}
 
     </div>
     </body>

@@ -2,7 +2,7 @@
 
 {% block content %}
     <div class="container">
-        <h4 style="margin-left: 45px">Create a new expense</h4>
+         <h4 style="margin-left: 45px">Create a new expense for Firm: {{ firm_name }} and Project: {{ project_name }}</h4>
         <hr>
         <form method="POST">
             {{ form.hidden_tag() }}
