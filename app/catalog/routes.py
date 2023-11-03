@@ -3,6 +3,7 @@ from app import db
 from app.catalog.models import Project, Vendor, Transaction
 from app.catalog.forms import CreateProjectForm, CreateVendorForm, CreateTransactionForm
 from flask import render_template, request, redirect, url_for, flash
+from flask_login import login_required
 
 
 @main.route('/')
@@ -67,6 +68,3 @@ def create_vendor():
     return render_template('create_vendor.html', form=form)
 
 
-@main.app_errorhandler(404)
-def page_not_found(error):
-    return render_template('404.html'), 404
